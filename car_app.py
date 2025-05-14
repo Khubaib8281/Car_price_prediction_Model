@@ -1,12 +1,19 @@
 import streamlit as st
 import pandas as pd
-import pickle
+import joblib
+import gdown
+
+# Download compressed model from Google Drive
+file_id = '1uu16nwqElnQey42iLGG2FZfohXCOYjUH'
+url = f'https://drive.google.com/uc?id={file_id}'
+output = 'model_compressed.pkl'
+gdown.download(url, output, quiet=False)
 
 # Load model and encoders
-model = pickle.load(open('model.pkl', 'rb'))
-encoders = pickle.load(open('encoders.pkl', 'rb'))
+model = joblib.load(output)
+encoders = joblib.load('encoders.pkl')  # Make sure encoders.pkl is in the same directory
 
-# Title
+# App Title
 st.title("🚗 Used Car Price Prediction App")
 st.markdown("Enter the details below to predict the **car price** in Pakistan (PKR).")
 
