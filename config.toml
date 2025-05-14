@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#4CAF50"   # Green for a clean, professional vibe (like "go" in traffic lights)
+backgroundColor = "#121212"  # Dark background for sleek design
+secondaryBackgroundColor = "#1E1E1E"  # Slightly lighter background for panels
+textColor = "#E0E0E0"     # Light grey text for readability
+font = "sans serif"      # Clean, modern font
